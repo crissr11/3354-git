@@ -7,8 +7,11 @@ public class Main {
             int result = addArguments(args);
             System.out.println(result);
         } catch (Exception e) {
-            System.err.println("Please provide only 4 integers to add");
+			System.err.println("Please provide only integers to add");
         }
+		catch (Exception e) {
+			System.err.println("Invalid character value");
+		}
     }
 
     private static int addArguments(String[] args) {
