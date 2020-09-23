@@ -12,10 +12,19 @@ public class Main {
     }
 
     private static int addArguments(String[] args) {
-        if(args[0] == "-")
-			return Integer.valueOf(args[1]) - Integer.valueOf(args[2]) - Integer.valueOf(args[3]);
+        
+		int value = 0;
 		
-		else
-			return Integer.valueOf(args[0]) + Integer.valueOf(args[1]) + Integer.valueOf(args[3]) + Integer.valueOf(args[4]);
+		if(args[0] == "-") {
+			for(int i = 1; i < args.length; i++)
+				value -= args[i];
+		}
+		
+		else {
+			for(int i = 0; i < args.length; i++)
+				value += args[i];
+		}
+		
+		return value;
     }
 }
