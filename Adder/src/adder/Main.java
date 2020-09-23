@@ -15,6 +15,19 @@ public class Main {
     }
 
     private static int addArguments(String[] args) {
-        return Integer.valueOf(args[0]) + Integer.valueOf(args[1]) + Integer.valueOf(args[3]) + Integer.valueOf(args[4]);
+        
+		int value = 0;
+		
+		if(args[0] == "-") {
+			for(int i = 1; i < args.length; i++)
+				value -= args[i];
+		}
+		
+		else {
+			for(int i = 0; i < args.length; i++)
+				value += args[i];
+		}
+		
+		return value;
     }
 }
